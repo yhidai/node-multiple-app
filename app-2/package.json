@@ -1,0 +1,20 @@
+{
+  "name": "app-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"test will be added.\"",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yhidai/node-multiple-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yhidai/node-multiple-app/issues"
+  },
+  "homepage": "https://github.com/yhidai/node-multiple-app#readme"
+}
