@@ -7,7 +7,7 @@ pipeline {
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
-      stage('CI Build and push snapshot') {
+      stage('app-1 CI Build and push snapshot') {
         when {
           branch 'PR-*'
         }
@@ -35,7 +35,7 @@ pipeline {
           }
         }
       }
-      stage('Build Release') {
+      stage('app-1 Build Release') {
         when {
           branch 'master'
         }
@@ -71,7 +71,7 @@ pipeline {
           }
         }
       }
-      stage('Promote to Environments') {
+      stage('app-1 Promote to Environments') {
         when {
           branch 'master'
         }
@@ -117,7 +117,7 @@ pipeline {
           }
         }
       }
-      stage('Build Release') {
+      stage('app-2 Build Release') {
         environment {
           APP_NAME = 'app-2'
         }
@@ -150,7 +150,7 @@ pipeline {
           }
         }
       }
-      stage('Promote to Environments') {
+      stage('app-2 Promote to Environments') {
         when {
           branch 'master'
         }
