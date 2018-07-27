@@ -1,0 +1,39 @@
+apiVersion: jenkins.io/v1
+kind: Release
+metadata:
+  creationTimestamp: "2018-07-27T06:54:55Z"
+  deletionTimestamp: null
+  name: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
+  resourceVersion: "1"
+spec:
+  commits:
+  - author:
+      creationTimestamp: "2018-07-27T06:54:25Z"
+      email: jenkins-x@googlegroups.com
+      name: jenkins-x-bot
+    branch: master
+    committer:
+      creationTimestamp: "2018-07-27T06:54:25Z"
+      email: jenkins-x@googlegroups.com
+      name: jenkins-x-bot
+    message: |
+      release 0.0.18
+    sha: 9a598c24970a755bd6311a23ac9aec7616eb56c0
+  - author:
+      creationTimestamp: "2018-07-27T06:53:10Z"
+      email: kyamato@idcf.jp
+      name: Kiichi Yamato
+    branch: master
+    committer:
+      creationTimestamp: "2018-07-27T06:53:10Z"
+      email: kyamato@idcf.jp
+      name: Kiichi Yamato
+    message: |
+      Add Skaffold.yaml for app-2
+    sha: 84f18d32da4b8af9983cb5f8d7ea378c899e3d6b
+  gitCloneUrl: https://github.com/yhidai/node-multiple-app.git
+  gitHttpUrl: https://github.com/yhidai/node-multiple-app
+  name: '{{ .Chart.Name }}'
+  releaseNotesURL: https://github.com/yhidai/node-multiple-app/releases/tag/v0.0.18
+  version: v0.0.18
+status: {}
