@@ -1,0 +1,39 @@
+apiVersion: jenkins.io/v1
+kind: Release
+metadata:
+  creationTimestamp: "2018-07-27T06:46:16Z"
+  deletionTimestamp: null
+  name: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
+  resourceVersion: "1"
+spec:
+  commits:
+  - author:
+      creationTimestamp: "2018-07-27T06:45:46Z"
+      email: jenkins-x@googlegroups.com
+      name: jenkins-x-bot
+    branch: master
+    committer:
+      creationTimestamp: "2018-07-27T06:45:46Z"
+      email: jenkins-x@googlegroups.com
+      name: jenkins-x-bot
+    message: |
+      release 0.0.16
+    sha: 46b5665c9995a372908f4a67cad5f884fcc49fed
+  - author:
+      creationTimestamp: "2018-07-27T06:44:34Z"
+      email: kyamato@idcf.jp
+      name: Kiichi Yamato
+    branch: master
+    committer:
+      creationTimestamp: "2018-07-27T06:44:34Z"
+      email: kyamato@idcf.jp
+      name: Kiichi Yamato
+    message: |
+      2018-07-27_15:07:34
+    sha: 43afe302d1b34077de88cbf68504b9a8eddee43c
+  gitCloneUrl: https://github.com/yhidai/node-multiple-app.git
+  gitHttpUrl: https://github.com/yhidai/node-multiple-app
+  name: '{{ .Chart.Name }}'
+  releaseNotesURL: https://github.com/yhidai/node-multiple-app/releases/tag/v0.0.16
+  version: v0.0.16
+status: {}
