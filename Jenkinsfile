@@ -7,14 +7,12 @@ pipeline {
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
-      environment {
-        APP_NAME = 'app-1'
-      }
       stage('CI Build and push snapshot') {
         when {
           branch 'PR-*'
         }
         environment {
+          APP_NAME = 'app-1'
           PREVIEW_VERSION = "0.0.0-SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
           PREVIEW_NAMESPACE = "$APP_NAME-$BRANCH_NAME".toLowerCase()
           HELM_RELEASE = "$PREVIEW_NAMESPACE".toLowerCase()
@@ -40,6 +38,12 @@ pipeline {
       stage('Build Release') {
         when {
           branch 'master'
+        }
+        environment {
+          APP_NAME = 'app-1'
+          PREVIEW_VERSION = "0.0.0-SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
+          PREVIEW_NAMESPACE = "$APP_NAME-$BRANCH_NAME".toLowerCase()
+          HELM_RELEASE = "$PREVIEW_NAMESPACE".toLowerCase()
         }
         steps {
           dir ('./app-1') {
@@ -85,16 +89,12 @@ pipeline {
           }
         }
       }
-    }
-    stages {
-      environment {
-        APP_NAME = 'app-2'
-      }
       stage('app-2 CI Build and push snapshot') {
         when {
           branch 'PR-*'
         }
         environment {
+          APP_NAME = 'app-2'
           PREVIEW_VERSION = "0.0.0-SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
           PREVIEW_NAMESPACE = "$APP_NAME-$BRANCH_NAME".toLowerCase()
           HELM_RELEASE = "$PREVIEW_NAMESPACE".toLowerCase()
@@ -118,6 +118,9 @@ pipeline {
         }
       }
       stage('Build Release') {
+        environment {
+          APP_NAME = 'app-2'
+        }
         when {
           branch 'master'
         }
