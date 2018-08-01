@@ -171,6 +171,7 @@ pipeline {
     }
     post {
         always {
+            sh 'sleep 100'
             cleanWs()
         }
     }
